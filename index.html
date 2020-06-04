@@ -8,11 +8,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 		<link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Podkova:wght@500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 	</head>
-	<body style="font-family: 'Podkova', serif;">
+	<body style="font-family: 'Podkova', serif;" ng-app="myApp" ng-controller="myCtrl">
 		<header>
 			<div class="jumbotron jumbotron-fluid" style="background-color: #FACE53;">
 				<div class="container">
@@ -22,21 +24,21 @@
 				  </h5>
 				<p style="text-align: center;">
 					<button class="btn btn-dark"> View my portfolio </button>
-					&nbsp;
-					<button class="btn btn-outline-dark"> View my skills </button>
 				</p>
 				</div>
 			  </div>
 		</header>
-		<section>
+
+		<!-- Education -->
+		<section ng-show="educationShow">
 			<h3 style="text-align: center;">Education</h3>
 			<br>
 			<div  class="container">
 				<div class="row">
 					<div class="col">
 						<img src="edu.png" height="400" width="400">
-
 					</div>
+
 					<div class="col">
 						<div id="accordion">
 							<div class="card">
@@ -81,10 +83,13 @@
 
 					</div>
 				</div>
-				<p style="text-align: right;"><button class="btn btn-outline-dark btn-lg">Work Experience >></button></p>
+				<p style="text-align: right;"><button class="btn btn-outline-dark btn-lg" ng-click="skill()">Skills <i class="fa fa-arrow-right"></i></button></p>
 			</div>
 		</section>
-		<!-- <section>
+		<!-- End of Education -->
+
+		<!-- Work Experience-->
+		<section ng-show="workShow">
 			<div class="container">
 				<h3 style="text-align: center;">Work Experience</h3>
 				<br>
@@ -141,8 +146,161 @@
 						</div>
 					</div>
 				</div>
+				<br>
+				<br>
+				<p style="text-align: right;"><button class="btn btn-outline-dark btn-lg" ng-click="edu()">Education <i class="fa fa-arrow-right"></i></button></p>
 			</div>
+		</section>
+		<!-- End Work Experience-->
+		
+		<!-- Skills -->
+		<section ng-show="skillShow">
+			<h3 style="text-align: center;">Skills</h3>
 			<br>
+			<div  class="container">
+				<div class="row">
+					<div class="col">
+						<img src="skills.png" height="400" width="400">
+
+					</div>
+					<div class="col">
+						<div id="accordion">
+							<div class="card">
+							  <div class="card-header bg-dark">
+								<a class="card-link" data-toggle="collapse" href="#One" style="color: white;">
+								  Programming Languages
+								</a>
+							  </div>
+							  <div id="One" class="collapse show" data-parent="#accordion">
+								<div class="card-body">
+									<h6>
+										Java, JavaScript, Python, PHP
+									</h6>
+								</div>
+							  </div>
+							</div>
+						  
+							<div class="card">
+							  <div class="card-header bg-dark">
+								<a class="collapsed card-link" data-toggle="collapse" href="#Two" style="color: white;">
+								  Front-End
+								</a>
+							  </div>
+							  <div id="Two" class="collapse" data-parent="#accordion">
+								<div class="card-body">
+									<h6>
+										HTML, CSS, Angular.JS, Bootstrap
+									</h6>
+								</div>
+							  </div>
+							</div>
+							<div class="card">
+							  <div class="card-header bg-dark">
+								<a class="collapsed card-link" data-toggle="collapse" href="#Three" style="color: white;">
+								  Tools, Databases, and OS
+								</a>
+							  </div>
+							  <div id="Three" class="collapse" data-parent="#accordion">
+								<div class="card-body">
+									<h6>
+										Node.JS, Heroku, Git, GitHub, Windows, macOS, Linux/Unix, Firebase, Pusher, MySQL
+									</h6>
+								</div>
+							  </div>
+							</div>							
+							<br>
+						  </div>
+
+					</div>
+				</div>
+				<p style="text-align: right;"><button class="btn btn-outline-dark btn-lg" ng-click="work()">Work Experience <i class="fa fa-arrow-right"></i></button></p> 
+			</div>
+		</section>
+
+				<!-- <section>
+			<div class="container">
+				<h3 style="text-align: center;">Work Experience</h3>
+				<br>
+				<div class="row">
+					<div class="col">
+						<div class="card">
+							<div class="card-body">
+								<h6>
+									Company: RESVEY LIMITED
+								</h6>
+								<p></p>
+								<h6>
+									Years: 10/2018 - 04/2020
+								</h6>
+								<p></p>
+								<h6>
+									Responsibilities:
+								</h6>
+								<ul>
+									<li>
+										Developed a web application using the Laravel PHP framework for food companies in the United Kingdom that improves their food production process.
+									</li>
+									<li>
+										Leveraged project management software JIRA to track the progress of the project and Git for version control.
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card">
+							<div class="card-body">
+								<h6>
+									Company: MAKEDU CONSULT
+								</h6>
+								<p></p>
+								<h6>
+									Years: 06/2018 - 08/2018
+								</h6>
+								<p></p>
+								<h6>
+									Responsibilities
+								</h6>
+								<ul>
+									<li>
+										Designed front-end of a web application using draw.io and implemented the front-end using HTML and Bootstrap 4.
+									</li>
+									<li>
+										Developed a web application using the Laravel PHP framework for Out of Home advertising companies that improves their billboard booking and client management process.
+									</li>
+								</ul>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<br>
+				<p style="text-align: right;"><button class="btn btn-outline-dark btn-lg">Skills >></button></p>
+			</div>
 		</section> -->
+		<script>
+			var app = angular.module('myApp', []);
+			app.controller('myCtrl', function($scope) {
+				$scope.educationShow = false;
+				$scope.workShow = false;
+				$scope.skillShow = true;
+				$scope.work = function(){
+					$scope.educationShow = false;
+					$scope.workShow = true;
+					$scope.skillShow = false;
+				}
+				$scope.edu = function(){
+					$scope.educationShow = true;
+					$scope.workShow = false;
+					$scope.skillShow = false;
+				}
+				$scope.skill = function(){
+					$scope.educationShow = false;
+					$scope.workShow = false;
+					$scope.skillShow = true;
+				}
+			});
+		</script>
 	</body>
 </html>
