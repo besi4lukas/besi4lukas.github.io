@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <title>
+            Visualization
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <link href="style.css" rel="stylesheet" >
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="#">Tennis Interactive Visualization</a>
+            <ul class="navbar-nav">
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Write up</a>
+                </li> -->
+            </ul>
+        </nav>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="sel1">Winner:</label>
+                        <select class="form-control" id="sel1">
+                          <option>Rafael Nadal</option>
+                          <option>Roger Federer</option>
+                          <option>Novak Djokovic</option>
+                        </select>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="sel1">Year:</label>
+                        <select class="form-control" id="sel2">
+                          <option>2009</option>
+                          <option>2010</option>
+                          <option>2011</option>
+                          <option>2012</option>
+                        </select>
+                      </div>
+
+                </div>
+                <div class="col">
+                    <br>
+                    <button type="button" class="btn btn-success" onclick="changeView()"> Change </button>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- <h1>Anaylizing the break statistics of winners</h1> -->
+                <div id="viz">
+                    <svg>
+                    </svg>
+                </div>
+        <script src="tennis.js"></script>
+        <script>
+            function changeView(){
+                winner = document.getElementById("sel1").value ;
+                year = document.getElementById("sel2").value ;
+
+                if(winner == "Rafael Nadal"){
+                    if(year == "2009"){
+                        d3.selectAll("svg").remove();
+                        tennisChart(rafaelNine, winner, year) ;
+                    }else if(year == "2010"){
+                        d3.selectAll("svg").remove();
+                        tennisChart(rafaelTen, winner, year) ;
+                    }else if(year == "2011"){
+                        d3.selectAll("svg").remove();
+                        tennisChart(rafaelEleven, winner, year) ;
+                    }else if(year == "2012"){
+                        d3.selectAll("svg").remove();
+                        tennisChart(rafaelTwelve, winner, year) ;
+                    }
+                }
+                
+                if(winner == "Roger Federer"){
+                    if(year == "2009"){
+                        d3.selectAll("svg").remove();
+                        tennisChart(rogerNine, winner, year) ;
+                    }else if(year == "2010"){
+                        d3.selectAll("svg").remove();
+                        tennisChart(rogerTen, winner, year) ;
+                    }else if(year == "2011"){
+                        d3.selectAll("svg").remove();
+                        tennisChart(rogerEleven, winner, year) ;
+                    }else if(year == "2012"){
+                        d3.selectAll("svg").remove();
+                        tennisChart(rogerTwelve, winner, year) ;
+                    }                    
+                }
+                
+                if(winner == "Novak Djokovic"){
+                    if(year == "2009"){
+                        d3.selectAll("svg").remove();
+                        tennisChart(novakNine, winner, year) ;
+                    }else if(year == "2010"){
+                        d3.selectAll("svg").remove();
+                        tennisChart(novakTen, winner, year) ;
+                    }else if(year == "2011"){
+                        d3.selectAll("svg").remove();
+                        tennisChart(novakEleven, winner, year) ;
+                    }else if(year == "2012"){
+                        d3.selectAll("svg").remove();
+                        tennisChart(novakTwelve, winner, year) ;
+                    }                    
+                }
+            }
+            player = document.getElementById("sel1").value ;
+            playerYear = document.getElementById("sel2").value ;
+            tennisChart(rafaelNine,player,playerYear)
+        </script>
+    </body>
+</html>
+<!-- Reference: Stack Overflow, 2018 -->
