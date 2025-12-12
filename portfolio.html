@@ -6,73 +6,127 @@
 		</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 		<link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Podkova:wght@500&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-		
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
+			tailwind.config = {
+				theme: {
+					extend: {
+						colors: {
+							base: "#0b1220",
+							surface: "#111827",
+							card: "#1f2937",
+							accent: "#22d3ee",
+							accent2: "#a855f7",
+							text: "#e5e7eb",
+							muted: "#94a3b8"
+						},
+						fontFamily: {
+							heading: ["Podkova", "serif"],
+							body: ["Maven Pro", "sans-serif"]
+						}
+					}
+				}
+			}
+		</script>
+		<style>
+			@keyframes blink {
+				0%, 50% { opacity: 1; }
+				51%, 100% { opacity: 0; }
+			}
+			#cursor {
+				color: #22d3ee;
+				animation: blink 1s infinite;
+				font-weight: 300;
+			}
+		</style>
 	</head>
-	<body style="font-family: 'Podkova', serif;">
-		<header>
-			<div class="jumbotron jumbotron-fluid" style="background-color: #577590;">  
-				<div class="container">
-				  <h1 style="text-align: center; color: white;"> KINGSLEY'S PORTFOLIO </h1>      
-				  <p style="text-align: center; color: white;">
-					  "Data is a precious thing and will last longer than the systems themselves." - Tim Berners-Lee
-				  </p>
-				<p style="text-align: center;">
-					<a class="btn btn-dark" href="index.html"> Return to skills </a>
+	<body class="bg-base text-text font-body antialiased">
+		<header class="relative overflow-hidden">
+			<div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950"></div>
+			<div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.15),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(168,85,247,0.18),transparent_35%)]"></div>
+			<div class="relative mx-auto max-w-5xl px-6 py-16 text-center">
+				<p class="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-sm text-muted ring-1 ring-white/10 backdrop-blur">
+					<span class="h-2 w-2 rounded-full bg-accent animate-pulse"></span>
+					Portfolio
 				</p>
+				<h1 class="mt-6 text-4xl font-heading font-semibold tracking-tight text-white sm:text-5xl">
+					<span id="typewriterText"></span><span id="cursor" class="animate-pulse">|</span>
+				</h1>
+				<p class="mt-4 text-lg text-muted max-w-3xl mx-auto">
+					"Data is a precious thing and will last longer than the systems themselves." - Tim Berners-Lee
+				</p>
+				<div class="mt-8 flex justify-center">
+					<a class="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 text-base font-semibold text-slate-900 shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 hover:shadow-cyan-500/30" href="index.html">
+						Return to skills
+						<i class="fa fa-arrow-left text-sm"></i>
+					</a>
 				</div>
-			  </div>
+			</div>
 		</header>
+	<script>
+		// Simple typewriter for the portfolio page
+		(function() {
+			let runId = 0;
+			function typeWriter(text, element, speed = 100) {
+				const current = ++runId;
+				element.textContent = '';
+				let i = 0;
+				function type() {
+					if (current !== runId) return;
+					if (i < text.length) {
+						element.textContent += text.charAt(i);
+						i++;
+						setTimeout(type, speed);
+					}
+				}
+				type();
+			}
+			document.addEventListener('DOMContentLoaded', function() {
+				const el = document.getElementById('typewriterText');
+				const cursor = document.getElementById('cursor');
+				if (el && cursor) {
+					cursor.style.display = 'inline';
+					typeWriter("Kingsley's Projects", el, 80);
+				}
+			});
+		})();
+	</script>
 
 		<!-- Portfolio -->
-		<section>
-			<div class="container">
-				<br>
-				<div class="row">
-					<div class="col">
-						<div class="card">
-							<div class="card-body">
-								<h2>
-									Cloud Recommendation System
-								</h2>
-								<p></p>
-								<h6>
-									Cloud Recommendation System that recommends the best cloud provider 
-									to use based on a customer’s requirements.
-								</h6>
-								<p>
-                                    <a class="btn btn-dark btn-block" href="https://cse546proj2.uc.r.appspot.com/"> View Project </a>
-                                </p>
-							</div>
+		<section class="py-14">
+			<div class="mx-auto max-w-5xl px-6 space-y-6">
+				<div class="rounded-3xl bg-card/80 p-8 shadow-xl shadow-black/30 ring-1 ring-white/10">
+					<div class="flex flex-wrap items-start justify-between gap-4">
+						<div>
+							<h2 class="text-2xl font-heading font-semibold text-white">Cloud Recommendation System</h2>
+							<p class="mt-2 max-w-2xl text-sm text-muted">
+								Cloud Recommendation System that suggests the best cloud provider based on a customer’s requirements.
+							</p>
 						</div>
+						<a class="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-slate-900 shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 hover:shadow-cyan-500/30" href="https://cse546proj2.uc.r.appspot.com/">
+							View Project
+							<i class="fa fa-external-link text-xs"></i>
+						</a>
 					</div>
 				</div>
 
-				<br>
-				<div class="row">
-					<div class="col">
-						<div class="card">
-							<div class="card-body">
-								<h2>
-									Tennis Interactive 
-								</h2>
-								<p></p>
-								<h6>
-                                    This project involves visualizing the break points tennis winners
-                                    had when they played with different players in different years. 
-								</h6>
-								<p>
-                                    <a class="btn btn-dark btn-block" href="tennis.html"> View Project </a>
-                                </p>
-							</div>
+				<div class="rounded-3xl bg-card/80 p-8 shadow-xl shadow-black/30 ring-1 ring-white/10">
+					<div class="flex flex-wrap items-start justify-between gap-4">
+						<div>
+							<h2 class="text-2xl font-heading font-semibold text-white">Tennis Interactive</h2>
+							<p class="mt-2 max-w-2xl text-sm text-muted">
+								Interactive visualization of break points tennis winners achieved across opponents and years.
+							</p>
 						</div>
+						<a class="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-slate-900 shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 hover:shadow-cyan-500/30" href="tennis.html">
+							View Project
+							<i class="fa fa-external-link text-xs"></i>
+						</a>
 					</div>
 				</div>
+			</div>
 		</section>
 		<!-- End Portfolio -->
 	</body>

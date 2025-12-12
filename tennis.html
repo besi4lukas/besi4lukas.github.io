@@ -5,59 +5,79 @@
         </title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Podkova:wght@500&display=swap" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            base: "#0b1220",
+                            surface: "#111827",
+                            card: "#1f2937",
+                            accent: "#22d3ee",
+                            accent2: "#a855f7",
+                            text: "#e5e7eb",
+                            muted: "#94a3b8"
+                        },
+                        fontFamily: {
+                            heading: ["Podkova", "serif"],
+                            body: ["Maven Pro", "sans-serif"]
+                        }
+                    }
+                }
+            }
+        </script>
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <link href="style.css" rel="stylesheet" >
     </head>
-    <body>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <a class="navbar-brand" href="#">Tennis Interactive Visualization</a>
-            <ul class="navbar-nav">
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">Write up</a>
-                </li> -->
-            </ul>
+    <body class="bg-base text-text font-body antialiased">
+        <nav class="border-b border-white/5 bg-surface/60 backdrop-blur">
+            <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+                <div class="flex items-center gap-3">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent font-semibold">T</div>
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.2em] text-muted">Interactive Viz</p>
+                        <p class="text-lg font-heading font-semibold text-white">Tennis Break Points</p>
+                    </div>
+                </div>
+                <a class="hidden text-sm text-muted transition hover:text-accent sm:block" href="index.html">Back to home</a>
+            </div>
         </nav>
-        <br>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="form-group">
-                        <label for="sel1">Winner:</label>
-                        <select class="form-control" id="sel1">
+        <main class="mx-auto max-w-5xl px-6 py-10">
+            <div class="rounded-3xl bg-card/80 p-6 shadow-xl shadow-black/30 ring-1 ring-white/10">
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:items-end">
+                    <div class="space-y-2">
+                        <label for="sel1" class="block text-sm font-semibold text-white">Winner</label>
+                        <select class="w-full rounded-xl border border-white/10 bg-surface px-4 py-3 text-sm text-white outline-none transition focus:border-accent" id="sel1">
                           <option>Rafael Nadal</option>
                           <option>Roger Federer</option>
                           <option>Novak Djokovic</option>
                         </select>
-                      </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label for="sel1">Year:</label>
-                        <select class="form-control" id="sel2">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="sel2" class="block text-sm font-semibold text-white">Year</label>
+                        <select class="w-full rounded-xl border border-white/10 bg-surface px-4 py-3 text-sm text-white outline-none transition focus:border-accent" id="sel2">
                           <option>2009</option>
                           <option>2010</option>
                           <option>2011</option>
                           <option>2012</option>
                         </select>
-                      </div>
-
-                </div>
-                <div class="col">
-                    <br>
-                    <button type="button" class="btn btn-success" onclick="changeView()"> Change </button>
+                    </div>
+                    <div class="flex items-end">
+                        <button type="button" class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-4 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 hover:shadow-cyan-500/30" onclick="changeView()">
+                            Change
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="container">
-            <!-- <h1>Anaylizing the break statistics of winners</h1> -->
+            <div class="mt-8 rounded-3xl bg-card/80 p-4 shadow-xl shadow-black/30 ring-1 ring-white/10">
                 <div id="viz">
                     <svg>
                     </svg>
                 </div>
+            </div>
+        </main>
         <script src="tennis.js"></script>
         <script>
             function changeView(){

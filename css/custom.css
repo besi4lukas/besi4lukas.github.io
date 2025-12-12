@@ -1,0 +1,22 @@
+/**
+ * Custom CSS Animations and Styles
+ * Typewriter cursor animation and other custom effects
+ */
+
+/* Typewriter cursor blink animation */
+@keyframes blink {
+	0%, 50% {
+		opacity: 1;
+	}
+	51%, 100% {
+		opacity: 0;
+	}
+}
+
+/* Typewriter cursor styling */
+#cursor {
+	color: #22d3ee;
+	animation: blink 1s infinite;
+	font-weight: 300;
+}
+
