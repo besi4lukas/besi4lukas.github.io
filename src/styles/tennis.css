@@ -1,0 +1,66 @@
+#viz {
+  width: 100%;
+  height: 600px;
+}
+
+#viz svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bar {
+  fill: #22d3ee;
+}
+
+#viz text {
+  font-size: 12px;
+  fill: #e5e7eb;
+}
+
+#viz path {
+  stroke: #475569;
+}
+
+#viz line {
+  stroke: #475569;
+}
+
+#viz line#limit {
+  stroke: #a855f7;
+  stroke-width: 3;
+  stroke-dasharray: 3 6;
+}
+
+.grid path {
+  stroke-width: 0;
+}
+
+.grid .tick line {
+  stroke: #94a3b8;
+  stroke-opacity: 0.3;
+}
+
+text.divergence {
+  font-size: 14px;
+  fill: #22d3ee;
+}
+
+text.value {
+  font-size: 14px;
+}
+
+text.title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+text.label {
+  font-size: 14px;
+  font-weight: 400;
+  fill: #cbd5e1;
+}
+
+text.source {
+  font-size: 10px;
+  fill: #94a3b8;
+}
