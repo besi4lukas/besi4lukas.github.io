@@ -16,6 +16,17 @@ export const projectsData: Project[] = [
     year: 2026,
     gradient: 'from-emerald-900/70 via-green-900/50 to-slate-900',
   },
+  {
+    id: 'anchor-ai',
+    title: 'Anchor AI',
+    description:
+      'The simplest interactive AI journal. A private AI chat app that acts as a grounding guide.',
+    tech: ['TypeScript', 'Next.js', 'Fastify', 'Anthropic API', 'Redis','Supabase'],
+    year: 2026,
+    url: 'https://anchor-one-umber.vercel.app/',
+    isExternal: true,
+    gradient: 'from-sky-900/70 via-blue-900/50 to-slate-900',
+  },
 
   // ── Existing applications ──────────────────────────────────────────────────
   {
@@ -23,7 +34,7 @@ export const projectsData: Project[] = [
     title: 'Cloud Recommendation System',
     description:
       'Recommends the best cloud provider based on a customer\'s technical and cost requirements.',
-    tech: ['Python', 'GCP', 'Machine Learning'],
+    tech: ['AngularJs','HTML', 'CSS', 'JavaScript', 'Python', 'Google Cloud Platform'],
     year: 2021,
     url: 'https://cse546proj2.uc.r.appspot.com/',
     isExternal: true,
