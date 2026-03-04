@@ -56,24 +56,26 @@ export function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
 
-        {/* Action links */}
-        {project.url && (
+        {/* Action links — render the row if at least one link exists */}
+        {(project.url || project.github) && (
           <div className="mt-1 flex gap-2">
-            {project.isExternal ? (
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkClass}
-              >
-                <i className="fa-solid fa-arrow-up-right-from-square text-[10px]" />
-                Live Demo
-              </a>
-            ) : (
-              <Link href={project.url} className={linkClass}>
-                <i className="fa-solid fa-arrow-up-right-from-square text-[10px]" />
-                View Project
-              </Link>
+            {project.url && (
+              project.isExternal ? (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClass}
+                >
+                  <i className="fa-solid fa-arrow-up-right-from-square text-[10px]" />
+                  Live Demo
+                </a>
+              ) : (
+                <Link href={project.url} className={linkClass}>
+                  <i className="fa-solid fa-arrow-up-right-from-square text-[10px]" />
+                  View Project
+                </Link>
+              )
             )}
 
             {project.github && (

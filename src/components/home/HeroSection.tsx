@@ -47,8 +47,8 @@ export function HeroSection() {
         </h1>
 
         {/* Sub-copy */}
-        <p className="animate-fade-up-3 mt-6 max-w-xl text-base text-white font-bold sm:text-lg">
-          Kingsley / Full-Stack Developer &amp; AI Specialist crafting intelligent,
+        <p className="animate-fade-up-3 mt-6 max-w-xl text-base text-white sm:text-lg text-muted">
+          Kingsley | AI Full-Stack Engineer, building intelligent,
           scalable, and immersive web solutions.
         </p>
 

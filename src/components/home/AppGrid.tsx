@@ -43,7 +43,7 @@ export function AppGrid() {
                   : 'border-white/10 text-muted hover:text-white'
               }`}
             >
-              <i className="fa-solid fa-grid-2 text-sm" />
+              <i className="fa-solid fa-grip text-sm" />
             </button>
             <button
               onClick={() => setIsGridView(false)}

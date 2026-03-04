@@ -42,8 +42,7 @@ export function Footer() {
       <div className="mx-auto max-w-5xl flex flex-col sm:flex-row items-center justify-between gap-4">
         {/* Copyright */}
         <p className="text-sm text-muted">
-          &copy; {year ?? ''} Kingsley.{' '}
-          <span className="text-accent2">Crafted with intelligence.</span>
+          &copy; {year ?? ''} Kingsley Besidonne.{' '}
         </p>
 
         {/* Social links */}
