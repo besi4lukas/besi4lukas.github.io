@@ -29,6 +29,7 @@ export interface Project {
   github?: string;          // GitHub repo link
   isExternal?: boolean;     // Open url in new tab
   gradient: string;         // Tailwind gradient classes for the thumbnail
+  thumbnail?: string;       // Path to thumbnail image in /public
 }
 
 // ─── Tennis Visualization ────────────────────────────────────────────────────

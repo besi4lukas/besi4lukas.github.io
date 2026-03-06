@@ -27,7 +27,8 @@ export const projectsData: Project[] = [
     url: 'https://anchor-one-umber.vercel.app/',
     isExternal: true,
     github: 'https://github.com/besi4lukas/anchor',
-    gradient: 'from-sky-900/70 via-blue-900/50 to-slate-900',
+    gradient: 'from-white via-white to-white',
+    thumbnail: '/images/projects/anchor-ai.png',
   },
 
   // ── Existing applications ──────────────────────────────────────────────────

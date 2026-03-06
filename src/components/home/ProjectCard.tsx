@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Project } from '@/types';
 
@@ -22,18 +23,31 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <div className="group flex flex-col overflow-hidden rounded-2xl bg-surface ring-1 ring-white/8 shadow-xl shadow-black/30 transition-all duration-250 hover:-translate-y-1 hover:ring-accent/50 hover:shadow-2xl hover:shadow-accent/10">
       {/* ── Thumbnail ─────────────────────────────────────────────────── */}
       <div className={`relative h-48 overflow-hidden bg-gradient-to-br ${project.gradient}`}>
-        {/* Inner shine overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        {project.thumbnail && (
+          <Image
+            src={project.thumbnail}
+            alt={project.title}
+            fill
+            className="object-contain"
+          />
+        )}
+
+        {/* Inner shine overlay (skip for thumbnail cards) */}
+        {!project.thumbnail && (
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        )}
 
         {/* Year badge */}
-        <span className="absolute top-3 right-3 rounded-full bg-black/50 px-2.5 py-0.5 text-xs font-semibold text-white/80 backdrop-blur-sm">
+        <span className={`absolute top-3 right-3 rounded-full px-2.5 py-0.5 text-xs font-semibold backdrop-blur-sm ${project.thumbnail ? 'bg-white/70 text-gray-800' : 'bg-black/50 text-white/80'}`}>
           {project.year}
         </span>
 
         {/* Subtle project initial watermark */}
-        <span className="absolute bottom-4 left-4 text-4xl font-black text-white/10 select-none">
-          {project.title.charAt(0)}
-        </span>
+        {!project.thumbnail && (
+          <span className="absolute bottom-4 left-4 text-4xl font-black text-white/10 select-none">
+            {project.title.charAt(0)}
+          </span>
+        )}
       </div>
 
       {/* ── Body ──────────────────────────────────────────────────────── */}
