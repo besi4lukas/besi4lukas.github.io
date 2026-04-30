@@ -12,7 +12,7 @@ export const projectsData: Project[] = [
     title: 'Jobric AI',
     description:
       'AI automated job application tracker for detecting Job applications within email inboxes. For Job seekers to keep track of their applications.',
-    tech: ['TypeScript', 'Next.js', 'Fastify', 'Supabase', 'OpenAI', 'Tailwind CSS', 'Vercel', 'Railway'],
+    tech: ['TypeScript', 'Next.js', 'React 19', 'Cloudflare', 'Anthropic Claude', 'Clerk', 'Vercel'],
     year: 2026,
     github: 'https://github.com/besi4lukas/jobric',
     gradient: 'from-[#F2EBDD] via-[#F2EBDD] to-[#F2EBDD]',
