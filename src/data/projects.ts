@@ -15,7 +15,8 @@ export const projectsData: Project[] = [
     tech: ['TypeScript', 'Next.js', 'Fastify', 'Supabase', 'OpenAI', 'Tailwind CSS', 'Vercel', 'Railway'],
     year: 2026,
     github: 'https://github.com/besi4lukas/jobric',
-    gradient: 'from-emerald-900/70 via-green-900/50 to-slate-900',
+    gradient: 'from-[#F2EBDD] via-[#F2EBDD] to-[#F2EBDD]',
+    thumbnail: '/images/projects/jobric-ai.png',
   },
   {
     id: 'anchor-ai',

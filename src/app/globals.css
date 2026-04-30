@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme inline {
+:root {
   /* ── Backgrounds ─────────────────────────────────── */
   --color-hero-bg:  #0A0A0F;   /* Near-black cinematic canvas     */
   --color-grid-bg:  #0F172A;   /* Deep navy – separates sections  */
