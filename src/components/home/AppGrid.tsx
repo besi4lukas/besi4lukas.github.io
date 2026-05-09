@@ -20,7 +20,7 @@ export function AppGrid() {
   const gridRef = useScrollReveal(80);
 
   return (
-    <section id="work" className="bg-grid-bg py-20 px-6">
+    <section id="work" className="bg-[#0a0a0a] py-20 px-6">
       <div className="mx-auto max-w-6xl">
         {/* ── Section Header ──────────────────────────────────────────── */}
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">

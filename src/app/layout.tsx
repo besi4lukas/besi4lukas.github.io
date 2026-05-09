@@ -14,9 +14,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Inter – primary typeface per PRD */}
+        {/* Inter – primary typeface per PRD; Space Grotesk + JetBrains Mono drive the hero */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
         {/* Font Awesome for icons */}

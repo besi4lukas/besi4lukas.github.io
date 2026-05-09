@@ -148,3 +148,32 @@
   pointer-events: none;
   transition: opacity 0.4s ease;
 }
+
+/* ─────────────────────────────────────────────────────
+   Hybrid Hero (brutalist + spotlight)
+───────────────────────────────────────────────────── */
+@keyframes heroMarquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+.hero-marquee { animation: heroMarquee 36s linear infinite; }
+
+.hero-display,
+.hero-outline,
+.hero-dash,
+.hero-name,
+.hero-dot {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(56px, 11.5vw, 152px);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.85;
+  display: inline-block;
+}
+.hero-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px #fafafa;
+}
+.hero-dash,
+.hero-dot { color: #ff3b3b; }
+.hero-name  { color: #fafafa; }
