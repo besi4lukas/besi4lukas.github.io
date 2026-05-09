@@ -14,6 +14,8 @@ export const projectsData: Project[] = [
       'AI automated job application tracker for detecting Job applications within email inboxes. For Job seekers to keep track of their applications.',
     tech: ['TypeScript', 'Next.js', 'React 19', 'Cloudflare', 'Anthropic Claude', 'Clerk', 'Vercel'],
     year: 2026,
+    url: 'https://jobric.vercel.app/',
+    isExternal: true,
     github: 'https://github.com/besi4lukas/jobric',
     gradient: 'from-[#F2EBDD] via-[#F2EBDD] to-[#F2EBDD]',
     thumbnail: '/images/projects/jobric-ai.png',
